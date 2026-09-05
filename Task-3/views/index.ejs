@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cognifyz Task 3 - Responsive Registration</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold" href="#">
+                Cognifyz
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#register">
+                            Register
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="hero-section">
+
+        <div class="container">
+
+            <div class="row align-items-center min-vh-75">
+
+                <div class="col-lg-7 text-center text-lg-start">
+
+                    <p class="hero-subtitle">
+                        FULL STACK DEVELOPMENT INTERNSHIP
+                    </p>
+
+                    <h1 class="hero-title">
+                        User Registration
+                    </h1>
+
+                    <p class="hero-text">
+                        A responsive registration page created using
+                        HTML, CSS, JavaScript, Bootstrap and Express.js.
+                    </p>
+
+                    <a href="#register"
+                       class="btn btn-dark btn-lg hero-btn">
+                        Register Now
+                    </a>
+
+                </div>
+
+                <div class="col-lg-5 text-center mt-5 mt-lg-0">
+
+                    <div class="hero-card">
+                        <h3>Task 3</h3>
+                        <p>
+                            Advanced CSS Styling &
+                            Responsive Design
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="about-section">
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <span>ABOUT</span>
+
+                <h2>
+                    Responsive Web Design
+                </h2>
+
+                <p>
+                    This page demonstrates advanced CSS styling,
+                    responsive layouts and Bootstrap components.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            01
+                        </div>
+
+                        <h4>
+                            Advanced CSS
+                        </h4>
+
+                        <p>
+                            Modern CSS properties, transitions,
+                            animations and hover effects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            02
+                        </div>
+
+                        <h4>
+                            Bootstrap
+                        </h4>
+
+                        <p>
+                            Bootstrap grid and components are
+                            used to create a consistent interface.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            03
+                        </div>
+
+                        <h4>
+                            Responsive
+                        </h4>
+
+                        <p>
+                            The layout automatically adapts to
+                            mobile, tablet and desktop screens.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTRATION SECTION ================= -->
+    <section id="register" class="registration-section">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-md-10 col-lg-7">
+
+                    <div class="registration-card">
+
+                        <div class="text-center mb-4">
+
+                            <span class="section-label">
+                                GET STARTED
+                            </span>
+
+                            <h2>
+                                Create Your Account
+                            </h2>
+
+                            <p>
+                                Fill in the details below to register.
+                            </p>
+
+                        </div>
+
+
+                        <form
+                            action="/register"
+                            method="POST"
+                            onsubmit="return validateForm()"
+                        >
+
+                            <!-- NAME -->
+                            <div class="form-group mb-3">
+
+                                <label for="name">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Enter your name"
+                                >
+
+                                <small id="nameError"
+                                       class="error-message">
+                                </small>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+                            <div class="form-group mb-3">
+
+                                <label for="email">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                >
+
+                                <small id="emailError"
+                                       class="error-message">
+                                </small>
+
+                            </div>
+
+
+                            <!-- AGE -->
+                            <div class="form-group mb-3">
+
+                                <label for="age">
+                                    Age
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="age"
+                                    name="age"
+                                    class="form-control"
+                                    placeholder="Enter your age"
+                                >
+
+                                <small id="ageError"
+                                       class="error-message">
+                                </small>
+
+                            </div>
+
+
+                            <!-- CITY -->
+                            <div class="form-group mb-3">
+
+                                <label for="city">
+                                    City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    class="form-control"
+                                    placeholder="Enter your city"
+                                >
+
+                                <small id="cityError"
+                                       class="error-message">
+                                </small>
+
+                            </div>
+
+
+                            <!-- PASSWORD -->
+                            <div class="form-group mb-4">
+
+                                <label for="password">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    class="form-control"
+                                    placeholder="Enter password"
+                                >
+
+                                <small id="passwordError"
+                                       class="error-message">
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-dark btn-lg w-100 register-btn"
+                            >
+                                Register
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="container text-center">
+
+            <h5>
+                Cognifyz Technologies
+            </h5>
+
+            <p>
+                Full Stack Development Internship
+            </p>
+
+            <p class="mb-0">
+                Task 3 - Advanced CSS Styling and Responsive Design
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- ================= INLINE JAVASCRIPT ================= -->
+    <script>
+
+        function validateForm() {
+
+            let isValid = true;
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const age =
+                document.getElementById("age").value.trim();
+
+            const city =
+                document.getElementById("city").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
+
+            // Clear previous errors
+
+            document.getElementById("nameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("ageError").innerText = "";
+            document.getElementById("cityError").innerText = "";
+            document.getElementById("passwordError").innerText = "";
+
+
+            // Name validation
+
+            if (name.length < 3) {
+
+                document.getElementById("nameError").innerText =
+                    "Name must contain at least 3 characters.";
+
+                isValid = false;
+            }
+
+
+            // Email validation
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+
+                document.getElementById("emailError").innerText =
+                    "Enter a valid email address.";
+
+                isValid = false;
+            }
+
+
+            // Age validation
+
+            if (age < 18 || age > 60) {
+
+                document.getElementById("ageError").innerText =
+                    "Age must be between 18 and 60.";
+
+                isValid = false;
+            }
+
+
+            // City validation
+
+            if (city.length < 2) {
+
+                document.getElementById("cityError").innerText =
+                    "Please enter a valid city.";
+
+                isValid = false;
+            }
+
+
+            // Password validation
+
+            if (password.length < 6) {
+
+                document.getElementById("passwordError").innerText =
+                    "Password must contain at least 6 characters.";
+
+                isValid = false;
+            }
+
+
+            return isValid;
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
