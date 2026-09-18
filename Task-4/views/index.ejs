@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cognifyz Task 4</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#home">
+            Task 4
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#register">
+                        Register
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section id="home" class="page-section active-page">
+
+    <div class="container">
+
+        <div class="hero">
+
+            <span class="badge bg-dark mb-3">
+                Cognifyz Full Stack Development
+            </span>
+
+            <h1>
+                Complex Form Validation
+            </h1>
+
+            <p>
+                This project demonstrates complex form validation,
+                dynamic DOM manipulation and client-side routing
+                using HTML, CSS, JavaScript, Bootstrap and Node.js.
+            </p>
+
+            <a
+                href="#register"
+                class="btn btn-dark btn-lg"
+            >
+                Start Registration
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REGISTER -->
+
+<section id="register" class="page-section">
+
+    <div class="container">
+
+        <div class="form-card">
+
+            <div class="text-center mb-4">
+
+                <h2 class="fw-bold">
+                    Create Account
+                </h2>
+
+                <p class="text-muted">
+                    Fill all details correctly.
+                </p>
+
+            </div>
+
+
+            <!-- FORM PROGRESS -->
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between">
+
+                    <small>
+                        Form Completion
+                    </small>
+
+                    <small id="progressText">
+                        0%
+                    </small>
+
+                </div>
+
+                <div class="progress mt-2">
+
+                    <div
+                        id="formProgress"
+                        class="progress-bar"
+                        style="width: 0%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form
+                action="/register"
+                method="POST"
+                id="registrationForm"
+            >
+
+                <!-- NAME -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="form-control"
+                        placeholder="Enter your full name"
+                    >
+
+                    <small
+                        id="nameError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="example@gmail.com"
+                    >
+
+                    <small
+                        id="emailError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <!-- AGE -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        name="age"
+                        id="age"
+                        class="form-control"
+                        placeholder="18 - 60"
+                        min="18"
+                        max="60"
+                    >
+
+                    <small
+                        id="ageError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <!-- CITY -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        City
+                    </label>
+
+                    <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        class="form-control"
+                        placeholder="Enter your city"
+                    >
+
+                    <small
+                        id="cityError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="form-control"
+                        placeholder="Create strong password"
+                    >
+
+                    <!-- PASSWORD STRENGTH -->
+
+                    <div class="strength-container mt-2">
+
+                        <div
+                            id="strengthBar"
+                            class="strength-bar"
+                        ></div>
+
+                    </div>
+
+                    <small
+                        id="strengthText"
+                        class="strength-text"
+                    >
+                        Password strength
+                    </small>
+
+
+                    <!-- PASSWORD RULES -->
+
+                    <ul class="password-rules mt-2">
+
+                        <li id="ruleLength">
+                            At least 8 characters
+                        </li>
+
+                        <li id="ruleUpper">
+                            One uppercase letter
+                        </li>
+
+                        <li id="ruleLower">
+                            One lowercase letter
+                        </li>
+
+                        <li id="ruleNumber">
+                            One number
+                        </li>
+
+                        <li id="ruleSpecial">
+                            One special character
+                        </li>
+
+                    </ul>
+
+                    <small
+                        id="passwordError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        class="form-control"
+                        placeholder="Confirm password"
+                    >
+
+                    <small
+                        id="confirmPasswordError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <!-- DYNAMIC MESSAGE -->
+
+                <div id="formMessage"></div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="btn btn-dark w-100 py-2"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="page-section">
+
+    <div class="container">
+
+        <div class="about-card">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+                    About Task 4
+                </h2>
+
+                <p>
+                    This project implements the main requirements
+                    of Cognifyz Task 4.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <h4>01</h4>
+
+                        <h5>
+                            Complex Validation
+                        </h5>
+
+                        <p>
+                            Validates name, email, age,
+                            city and strong password.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <h4>02</h4>
+
+                        <h5>
+                            Dynamic DOM
+                        </h5>
+
+                        <p>
+                            Password rules, strength indicator,
+                            errors and progress update dynamically.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <h4>03</h4>
+
+                        <h5>
+                            Client-Side Routing
+                        </h5>
+
+                        <p>
+                            Home, Register and About pages
+                            work using hash-based routing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<!-- Custom JS -->
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
