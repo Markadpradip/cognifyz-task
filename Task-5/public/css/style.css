@@ -1,0 +1,223 @@
+/* ======================================
+   GLOBAL
+====================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f4f7fb;
+    color: #212529;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ======================================
+   NAVBAR
+====================================== */
+
+.navbar {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ======================================
+   MAIN
+====================================== */
+
+main {
+    min-height: calc(100vh - 56px);
+}
+
+
+/* ======================================
+   HEADING
+====================================== */
+
+main h1 {
+    color: #212529;
+    letter-spacing: -0.5px;
+}
+
+
+/* ======================================
+   CARDS
+====================================== */
+
+.card {
+    border: none;
+    border-radius: 14px;
+}
+
+.card-body {
+    border-radius: 14px;
+}
+
+
+/* ======================================
+   FORM
+====================================== */
+
+.form-control {
+    min-height: 45px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.btn {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ======================================
+   TABLE
+====================================== */
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    white-space: nowrap;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+
+/* ======================================
+   ACTION BUTTONS
+====================================== */
+
+.table .btn {
+    min-width: 65px;
+}
+
+
+/* ======================================
+   MESSAGE
+====================================== */
+
+#message {
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+
+/* ======================================
+   LOADING
+====================================== */
+
+#userTableBody td {
+    padding: 18px;
+}
+
+
+/* ======================================
+   ANIMATION
+====================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 768px) {
+
+    main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .navbar span {
+        font-size: 13px;
+    }
+
+    .card-body {
+        padding: 20px !important;
+    }
+
+    main h1 {
+        font-size: 30px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .table .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 576px) {
+
+    main h1 {
+        font-size: 25px;
+    }
+
+    main p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+    .table {
+        min-width: 650px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
